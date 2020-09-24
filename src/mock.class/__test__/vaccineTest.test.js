@@ -1,3 +1,4 @@
+import Covid19Vaccine from "../covid19Vaccine";
 import VaccineTest from "../vaccineTest";
 
 const mockAcceptInjection = jest.fn();
@@ -22,7 +23,11 @@ describe("inject", () => {
     // TODO 14: add test here
     const vaccineTest = new VaccineTest();
     vaccineTest.inject();
-    expect(mockAcceptInjection).toHaveBeenCalledTimes(1);
+    // expect(mockAcceptInjection).toHaveBeenCalledTimes(1);
+    // TODO feedback: 这个测试的描述是说要injection with vaccine
+    expect(mockAcceptInjection).toHaveBeenCalledWith(
+      expect.any(Covid19Vaccine)
+    );
   });
 });
 
